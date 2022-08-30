@@ -2,8 +2,8 @@
 Java EE project based on bank functionning
 
 ## Auteur
-NOUGNOUI Kokouvi Jean-Jacques
-Développeur Web Fullstack
+NOUGNOUI Kokouvi Jean-Jacques | 
+Développeur Web Fullstack | 
 Etudiant en Master 2 AL à ESGIS-Avédji
 
 ## Description
