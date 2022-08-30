@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TransactionEditDlg" widgetVar="TransactionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTransactionTitle}">
+            <h:form id="TransactionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{transactionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTransactionLabel_idTrans}" for="idTrans" />
+                        <p:inputText id="idTrans" value="#{transactionController.selected.idTrans}" title="#{bundle.EditTransactionTitle_idTrans}" />
+                        <p:outputLabel value="#{bundle.EditTransactionLabel_dateTrans}" for="dateTrans" />
+                        <p:inputText id="dateTrans" value="#{transactionController.selected.dateTrans}" title="#{bundle.EditTransactionTitle_dateTrans}" />
+                        <p:outputLabel value="#{bundle.EditTransactionLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{transactionController.selected.montant}" title="#{bundle.EditTransactionTitle_montant}" />
+                        <p:outputLabel value="#{bundle.EditTransactionLabel_typeTrans}" for="typeTrans" />
+                        <p:inputText id="typeTrans" value="#{transactionController.selected.typeTrans}" title="#{bundle.EditTransactionTitle_typeTrans}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{transactionController.update}" value="#{bundle.Save}" update="display,:TransactionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TransactionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TransactionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

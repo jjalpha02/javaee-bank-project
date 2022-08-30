@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CompteEpargneViewDlg" widgetVar="CompteEpargneViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCompteEpargneTitle}">
+            <h:form id="CompteEpargneViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{compteEpargneController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCompteEpargneLabel_tauxInteret}"/>
+                        <h:outputText value="#{compteEpargneController.selected.tauxInteret}" title="#{bundle.ViewCompteEpargneTitle_tauxInteret}"/>
+                        <h:outputText value="#{bundle.ViewCompteEpargneLabel_idCompte}"/>
+                        <h:outputText value="#{compteEpargneController.selected.idCompte}" title="#{bundle.ViewCompteEpargneTitle_idCompte}"/>
+                        <h:outputText value="#{bundle.ViewCompteEpargneLabel_numero}"/>
+                        <h:outputText value="#{compteEpargneController.selected.numero}" title="#{bundle.ViewCompteEpargneTitle_numero}"/>
+                        <h:outputText value="#{bundle.ViewCompteEpargneLabel_solde}"/>
+                        <h:outputText value="#{compteEpargneController.selected.solde}" title="#{bundle.ViewCompteEpargneTitle_solde}"/>
+                        <h:outputText value="#{bundle.ViewCompteEpargneLabel_dateCreation}"/>
+                        <h:outputText value="#{compteEpargneController.selected.dateCreation}" title="#{bundle.ViewCompteEpargneTitle_dateCreation}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CompteEpargneViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

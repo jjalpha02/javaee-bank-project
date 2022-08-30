@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AgenceEditDlg" widgetVar="AgenceEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAgenceTitle}">
+            <h:form id="AgenceEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="IdAg:" for="idAg" />
+                        <p:inputText id="idAg" value="#{agenceMBean.agence.idAg}" title="IdAg" />
+                        <p:outputLabel value="NomAg:" for="nomAg" />
+                        <p:inputText id="nomAg" value="#{agenceMBean.agence.nomAg}" title="NomAg" />
+                        <p:outputLabel value="TelAg:" for="telAg" />
+                        <p:inputText id="telAg" value="#{agenceMBean.agence.telAg}" title="TelAg" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{agenceMbean.updateAgence()}" value="#{bundle.Save}" oncomplete="handleSubmit(args, 'AgenceEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AgenceEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

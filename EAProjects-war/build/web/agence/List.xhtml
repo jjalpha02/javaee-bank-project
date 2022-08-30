@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/index.xhtml">
+
+        <ui:define name="title">
+            <h:outputText value="Liste des Agences"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form>
+                <p:panel header="#{bundle.ListClientTitle}">
+                    <p:dataTable value="#{agenceMBean.agences}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdAg"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idAg}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="NomAg"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nomAg}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="TelAg"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telAg}"/>
+                    </p:column>
+                </p:dataTable>
+                </p:panel>
+            </h:form>
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+        
+    </ui:composition>
+
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CompteCourantEditDlg" widgetVar="CompteCourantEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCompteCourantTitle}">
+            <h:form id="CompteCourantEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{compteCourantController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCompteCourantLabel_fraisVersement}" for="fraisVersement" />
+                        <p:inputText id="fraisVersement" value="#{compteCourantController.selected.fraisVersement}" title="#{bundle.EditCompteCourantTitle_fraisVersement}" />
+                        <p:outputLabel value="#{bundle.EditCompteCourantLabel_idCompte}" for="idCompte" />
+                        <p:inputText id="idCompte" value="#{compteCourantController.selected.idCompte}" title="#{bundle.EditCompteCourantTitle_idCompte}" />
+                        <p:outputLabel value="#{bundle.EditCompteCourantLabel_numero}" for="numero" />
+                        <p:inputText id="numero" value="#{compteCourantController.selected.numero}" title="#{bundle.EditCompteCourantTitle_numero}" />
+                        <p:outputLabel value="#{bundle.EditCompteCourantLabel_solde}" for="solde" />
+                        <p:inputText id="solde" value="#{compteCourantController.selected.solde}" title="#{bundle.EditCompteCourantTitle_solde}" />
+                        <p:outputLabel value="#{bundle.EditCompteCourantLabel_dateCreation}" for="dateCreation" />
+                        <p:inputText id="dateCreation" value="#{compteCourantController.selected.dateCreation}" title="#{bundle.EditCompteCourantTitle_dateCreation}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{compteCourantController.update}" value="#{bundle.Save}" update="display,:CompteCourantListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CompteCourantEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CompteCourantEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
