@@ -5,8 +5,10 @@
 package ManagedBeans;
 
 import entities.CompteCourant;
-import javax.annotation.ManagedBean;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import services.local.CompteCourantServiceBeanLocal;
 
@@ -19,8 +21,10 @@ import services.local.CompteCourantServiceBeanLocal;
 public class CompteCourantMBean {
     
     @EJB
-    private CompteCourantServiceBeanLocal compteCourantServ;
+    private CompteCourantServiceBeanLocal cpteCourantService;
+    
     private CompteCourant cpteCourant;
+    private List<CompteCourant> cpteCourants = new ArrayList<CompteCourant>();
 
     public CompteCourant getCpteCourant() {
         return cpteCourant;
@@ -30,11 +34,36 @@ public class CompteCourantMBean {
         this.cpteCourant = cpteCourant;
     }
 
+    public List<CompteCourant> getCpteCourants() {
+        return cpteCourants;
+    }
+
+    public void setCpteCourants(List<CompteCourant> cpteCourants) {
+        this.cpteCourants = cpteCourants;
+    }
     
     public void enregistrerCompteCourant() {
-        compteCourantServ.addOne(cpteCourant);
+        cpteCourantService.addOne(cpteCourant);
         cpteCourant = new CompteCourant();
     }
     
+    public CompteCourant updateCompteCourant() {
+        cpteCourantService.updateOne(cpteCourant);
+        return cpteCourant;
+    }
+    
+    public List<CompteCourant> getAllCompteCourant() {
+        cpteCourants = cpteCourantService.getAll();
+        return cpteCourants;
+    }
+    
+    public CompteCourant getOneCompteCourant(Integer id) {
+        cpteCourant = cpteCourantService.getOne(id);
+        return cpteCourant;
+    }
+        
+    public void deleteCompteCourant() {
+        cpteCourantService.deleteOne(cpteCourant);
+    }
     
 }

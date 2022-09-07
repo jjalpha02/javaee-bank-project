@@ -34,7 +34,7 @@ public class AgenceMBean implements Serializable{
     public static void main(String[] args) {
         try {
             Context context = MBeansUtility.getInitialContext();
-            AgenceServiceBeanLocal agenceS = (AgenceServiceBeanLocal) context.lookup("");
+            AgenceServiceBeanLocal agenceService = (AgenceServiceBeanLocal) context.lookup("");
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -72,7 +72,14 @@ public class AgenceMBean implements Serializable{
         return agences;
     }
     
-    
+    public Agence getOneAgence(Integer id) {
+        agence = agenceService.getOne(id);
+        return agence;
+    }
+        
+    public void deleteAgence() {
+        agenceService.deleteOne(agence);
+    }
     
     
 }

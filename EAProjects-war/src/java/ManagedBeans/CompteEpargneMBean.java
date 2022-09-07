@@ -5,6 +5,8 @@
 package ManagedBeans;
 
 import entities.CompteEpargne;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.faces.bean.ViewScoped;
@@ -19,8 +21,10 @@ import services.local.CompteEpargneServiceBeanLocal;
 public class CompteEpargneMBean {
     
     @EJB
-    private CompteEpargneServiceBeanLocal compteEpargneServ;
+    private CompteEpargneServiceBeanLocal cpteEpargneService;
+    
     private CompteEpargne cpteEpargne;
+    private List<CompteEpargne> cpteEpargnes = new ArrayList<CompteEpargne>();
 
     public CompteEpargne getCpteEpargne() {
         return cpteEpargne;
@@ -31,8 +35,26 @@ public class CompteEpargneMBean {
     }
     
     public void enregistrerCompteEpargne() {
-        compteEpargneServ.addOne(cpteEpargne);
+        cpteEpargneService.addOne(cpteEpargne);
         cpteEpargne = new CompteEpargne();
     }
     
+    public CompteEpargne updateCompteEpargne() {
+        cpteEpargneService.updateOne(cpteEpargne);
+        return cpteEpargne;
+    }
+    
+    public List<CompteEpargne> getAllCompteEpargne() {
+        cpteEpargnes = cpteEpargneService.getAll();
+        return cpteEpargnes;
+    }
+    
+    public CompteEpargne getOneCompteEpargne(Integer id) {
+        cpteEpargne = cpteEpargneService.getOne(id);
+        return cpteEpargne;
+    }
+        
+    public void deleteCompteEpargne() {
+        cpteEpargneService.deleteOne(cpteEpargne);
+    }
 }
