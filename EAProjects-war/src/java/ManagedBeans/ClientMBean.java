@@ -59,7 +59,7 @@ public class ClientMBean implements Serializable {
         client = new Client();
     }
     
-        public Client updateClient() {
+    public Client updateClient() {
         clientService.updateOne(client);
         return client;
     }

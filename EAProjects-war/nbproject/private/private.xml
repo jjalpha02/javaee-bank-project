@@ -4,12 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/web/client/Edit.xhtml</file>
+            <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/MBeansUtility.java</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/web/index.xhtml</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/Bundle.properties</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/ClientMBean.java</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/web/agence/View.xhtml</file>
+            <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/TransactionMBean.java</file>
+            <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/CompteEpargneMBean.java</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/web/template.xhtml</file>
+            <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/CompteCourantMBean.java</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/conf/MANIFEST.MF</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/src/java/ManagedBeans/AgenceMBean.java</file>
             <file>file:/C:/Users/Utilisateur/Documents/NetBeansProjects/EAProjects/EAProjects-war/web/index.html</file>
